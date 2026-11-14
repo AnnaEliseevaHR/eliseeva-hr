@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: eliseeva-hr
+    runtime: node
+    plan: 0.5c-512mb
+    buildCommand: node --check preview.mjs
+    startCommand: npm start
+    domains:
+      - eliseevahr.com
+    disk:
+      name: enquiries
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: HR_HOST
+        value: 0.0.0.0
+      - key: HR_ORIGIN
+        value: https://eliseevahr.com
+      - key: HR_DATA_DIR
+        value: /var/data
+      - key: HR_ADMIN_PASSWORD
+        sync: false
+      - key: HR_ENQUIRY_KEY
+        sync: false

@@ -1,0 +1,6 @@
+{
+  "name": "eliseeva-hr",
+  "private": true,
+  "engines": { "node": "24.x" },
+  "scripts": { "start": "node preview.mjs --public" }
+}
